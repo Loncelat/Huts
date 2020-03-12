@@ -7,7 +7,7 @@ public class InputReader {
     public int H;
     public int D;
     public int M;
-    public ArrayList<Employee> emp;
+    public ArrayList<Developer> emp;
     public ArrayList<Manager> man;
 
     private Scanner scanner = new Scanner(System.in);
@@ -38,7 +38,7 @@ public class InputReader {
             for (int s = 0; s < S; s++) {
                 skills[s] = scanner.next();
             }
-            emp.add(new Employee(c, b, skills));
+            emp.add(new Developer(c, b, skills));
         }
         
         // Amount of managers
