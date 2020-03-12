@@ -19,7 +19,7 @@ public class InputReader {
         W = scanner.nextInt();
         H = scanner.nextInt();
 
-        Grid grid = Grid.getGrid();
+        Grid grid = Grid.setGrid(W, H);
 
         // Read grid
         for (int h = 0; h < H; h++) {

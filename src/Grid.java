@@ -16,10 +16,11 @@ public class Grid {
         return actualGrid;
     }
 
-    static void setGrid(int W, int H) {
+    static Grid setGrid(int W, int H) {
         if (actualGrid == null) {
             actualGrid = new Grid(W, H);
         }
+        return actualGrid;
     }
 
     void addCell(int W, int H, boolean isMan) {
