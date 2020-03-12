@@ -1,4 +1,4 @@
-class Developer {
+class Developer implements Comparable<Developer> {
     int company;
     int bonus;
     int[] skills;
@@ -12,5 +12,10 @@ class Developer {
         for (int i = 0; i < skills.length; i++) {
             skills[i] = skillsstring[i].hashCode();
         }
+    }
+
+    @Override
+    public int compareTo(Developer employee) {
+        return company == employee.company ? Integer.compare(bonus, employee.bonus) : Integer.compare(company, employee.company);
     }
 }
