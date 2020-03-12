@@ -1,11 +1,11 @@
-class Employee implements Comparable<Employee> {
+class Developer implements Comparable<Developer> {
     int company;
     int bonus;
     int[] skills;
     int x = -1;
     int y = -1;
 
-    public Employee(String company, int bonus, String[] skillsstring) {
+    public Developer(String company, int bonus, String[] skillsstring) {
         this.company = company.hashCode();
         this.bonus = bonus;
         skills = new int[skillsstring.length];
@@ -15,7 +15,7 @@ class Employee implements Comparable<Employee> {
     }
 
     @Override
-    public int compareTo(Employee employee) {
+    public int compareTo(Developer employee) {
         return company == employee.company ? Integer.compare(bonus, employee.bonus) : Integer.compare(company, employee.company);
     }
 }
