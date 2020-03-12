@@ -1,11 +1,11 @@
-class Employee {
+class Developer {
     int company;
     int bonus;
     int[] skills;
     int x = -1;
     int y = -1;
 
-    public Employee(String company, int bonus, String[] skillsstring) {
+    public Developer(String company, int bonus, String[] skillsstring) {
         this.company = company.hashCode();
         this.bonus = bonus;
         skills = new int[skillsstring.length];
