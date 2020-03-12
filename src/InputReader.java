@@ -9,11 +9,11 @@ public class InputReader {
     public int H;
     public int D;
     public int M;
-    public ArrayList<Developer> emp;
-    public ArrayList<Manager> man;
+    public ArrayList<Developer> emp = new ArrayList<>();
+    public ArrayList<Manager> man = new ArrayList<>();
 
     HashMap<String, ArrayList<Developer>> emplo = new HashMap<>();
-    HashMap<String, ArrayList<Manager>> managers = new HashMap<>();
+//    HashMap<String, ArrayList<Manager>> managers = new HashMap<>();
 
     private Scanner scanner = new Scanner(System.in);
 
@@ -34,7 +34,9 @@ public class InputReader {
                 switch (temp) {
                     case '#': break;
                     case '_': grid.addCell(w, h, false);
-                    case 'M': grid.addCell(w, h, true);;
+                    break;
+                    case 'M': grid.addCell(w, h, true);
+                    break;
                 }
             }
         }
@@ -74,18 +76,19 @@ public class InputReader {
             int b = scanner.nextInt();
             Manager mangr = new Manager(c, b);
             man.add(mangr);
-
-            if (managers.containsKey(c)) {
-                managers.get(c).add(mangr);
-            } else {
-                managers.put(c, new ArrayList<>());
-                managers.get(c).add(mangr);
-            }
+//
+//            if (managers.containsKey(c)) {
+//                managers.get(c).add(mangr);
+//            } else {
+//                managers.put(c, new ArrayList<>());
+//                managers.get(c).add(mangr);
+//            }
+//        }
+//
+//        for (ArrayList<Manager> e: managers.values()) {
+//            Collections.sort(e);
+//        }
         }
-
-        for (ArrayList<Manager> e: managers.values()) {
-            Collections.sort(e);
-        }
-        
+//
     }
 }
