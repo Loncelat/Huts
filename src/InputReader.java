@@ -31,7 +31,6 @@ public class InputReader {
                     case '_': grid.addCell(w, h, false);
                     case 'M': grid.addCell(w, h, true);;
                 }
-                grid.addCell();
             }
         }
         
