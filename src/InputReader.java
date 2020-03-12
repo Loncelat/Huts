@@ -19,13 +19,19 @@ public class InputReader {
         W = scanner.nextInt();
         H = scanner.nextInt();
 
-        Grid grid = new Gr
+        Grid grid = Grid.getGrid();
 
         // Read grid
         for (int h = 0; h < H; h++) {
             String input = scanner.next();
             for (int w = 0; w < W; w++) {
-                
+                char temp = input.charAt(w);
+                switch (temp) {
+                    case '#': break;
+                    case '_': grid.addCell(w, h, false);
+                    case 'M': grid.addCell(w, h, true);;
+                }
+                grid.addCell();
             }
         }
         

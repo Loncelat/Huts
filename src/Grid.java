@@ -22,8 +22,8 @@ public class Grid {
         }
     }
 
-    void addCell() {
-
+    void addCell(int W, int H, boolean isMan) {
+        grid[W][H] = new Cell(isMan);
     }
 
 }
