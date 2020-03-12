@@ -19,6 +19,8 @@ public class InputReader {
         W = scanner.nextInt();
         H = scanner.nextInt();
 
+        Grid grid = new Gr
+
         // Read grid
         for (int h = 0; h < H; h++) {
             String input = scanner.next();
