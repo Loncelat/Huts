@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class InputReader {
@@ -9,6 +11,9 @@ public class InputReader {
     public int M;
     public ArrayList<Developer> emp;
     public ArrayList<Manager> man;
+
+    HashMap<String, ArrayList<Developer>> emplo = new HashMap<>();
+    HashMap<String, ArrayList<Manager>> managers = new HashMap<>();
 
     private Scanner scanner = new Scanner(System.in);
 
@@ -45,7 +50,20 @@ public class InputReader {
             for (int s = 0; s < S; s++) {
                 skills[s] = scanner.next();
             }
-            emp.add(new Developer(c, b, skills));
+            Developer dev = new Developer(c, b, skills);
+            emp.add(dev);
+
+            if (emplo.containsKey(c)) {
+                emplo.get(c).add(dev);
+            } else {
+                emplo.put(c, new ArrayList<>());
+                emplo.get(c).add(dev);
+            }
+
+        }
+
+        for (ArrayList<Developer> e: emplo.values()) {
+            Collections.sort(e);
         }
         
         // Amount of managers
@@ -54,7 +72,19 @@ public class InputReader {
         for (int m = 0; m < M; m++) {
             String c = scanner.next();
             int b = scanner.nextInt();
-            man.add(new Manager(c, b));
+            Manager mangr = new Manager(c, b);
+            man.add(mangr);
+
+            if (managers.containsKey(c)) {
+                managers.get(c).add(mangr);
+            } else {
+                managers.put(c, new ArrayList<>());
+                managers.get(c).add(mangr);
+            }
+        }
+
+        for (ArrayList<Manager> e: managers.values()) {
+            Collections.sort(e);
         }
         
     }

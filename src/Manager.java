@@ -12,6 +12,6 @@ public class Manager implements Comparable<Manager> {
 
     @Override
     public int compareTo(Manager employee) {
-        return company == employee.company ? Integer.compare(bonus, employee.bonus) : Integer.compare(company, employee.company);
+        return -Integer.compare(bonus, employee.bonus);
     }
 }

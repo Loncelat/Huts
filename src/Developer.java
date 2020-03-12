@@ -16,6 +16,6 @@ class Developer implements Comparable<Developer> {
 
     @Override
     public int compareTo(Developer employee) {
-        return company == employee.company ? Integer.compare(bonus, employee.bonus) : Integer.compare(company, employee.company);
+        return -Integer.compare(bonus, employee.bonus);
     }
 }
