@@ -26,9 +26,7 @@ public class Grid {
     void addCell(int W, int H, boolean isMan) {
         grid[W][H] = new Cell(isMan);
     }
-
 }
-
 
 class Cell {
     public boolean isManager;
